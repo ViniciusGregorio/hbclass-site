@@ -1,0 +1,39 @@
+name: Publicar v2 no GitHub Pages
+
+# Publicação manual somente dos arquivos finais da homepage.
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Obter os arquivos
+        uses: actions/checkout@v6
+      - name: Verificar os arquivos do repositório público
+        run: python3 scripts/check-public.py
+      - name: Preparar a v2 e atualizar suas galerias
+        run: python3 scripts/build-release.py --version evolucao --output dist
+      - name: Configurar Pages
+        uses: actions/configure-pages@v5
+      - name: Enviar os arquivos públicos
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+      - name: Publicar
+        id: deployment
+        uses: actions/deploy-pages@v4
