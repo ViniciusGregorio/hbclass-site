@@ -48,8 +48,8 @@ window.HBC_MEDIA = {
         {
           "src": "assets/novas/disposicao01.webp",
           "alt": {
-            "pt": "Passageira usa o celular no banco traseiro de um veículo executivo",
-            "en": "Passenger using a phone in the rear seat of an executive vehicle"
+            "pt": "Motorista recebe uma família junto a um sedã executivo na entrada de um hotel",
+            "en": "Chauffeur welcoming a family beside an executive sedan at a hotel entrance"
           }
         }
       ]
