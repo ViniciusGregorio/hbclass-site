@@ -1,13 +1,14 @@
-/* Planejamento local: seis campos, revisão e abertura do WhatsApp sem envio automático. */
+/* Solicitação local de orçamento: nome, trajeto e revisão antes de abrir o WhatsApp. */
 (function () {
   'use strict';
   const config = window.HBC_BOOKING_CONFIG || {};
   const serviceIds = ['aeroporto', 'corporativo', 'disposicao', 'eventos', 'hoteis', 'receptivo', 'assistants', 'familyoffice'];
-  const draftFields = ['service', 'origin', 'destination', 'date', 'time', 'vehicle'];
+  const draftFields = ['name', 'service', 'origin', 'destination', 'date', 'time', 'vehicle'];
   const text = {
     pt: {
       eyebrow: 'PLANEJE SEU TRAJETO', title: 'Seu próximo compromisso começa aqui.',
-      intro: 'Informe o trajeto, a data e o veículo de preferência. Depois, revise os detalhes para continuar pelo WhatsApp.',
+      intro: 'Informe o nome e os detalhes do trajeto. Depois, revise a solicitação e continue pelo WhatsApp para receber um orçamento.',
+      name: 'Nome', nameLabel: 'Nome *', namePlaceholder: 'Nome para o atendimento',
       required: '* Campos obrigatórios', service: 'Serviço', serviceLabel: 'Serviço *', serviceSelect: 'Selecione o serviço',
       aeroporto: 'Transfer aeroporto', corporativo: 'Transporte corporativo', disposicao: 'Disposição executiva',
       eventos: 'Eventos', hoteis: 'Hotéis & FBO', receptivo: 'Receptivo Executivo',
@@ -16,27 +17,29 @@
       destination: 'Destino', destinationLabel: 'Destino *', destinationPlaceholder: 'Hotel, compromisso ou endereço de chegada',
       date: 'Data', dateLabel: 'Data *', time: 'Horário', timeLabel: 'Horário *', timeHelp: 'Horário local de São Paulo.',
       vehicle: 'Veículo de preferência', vehicleLabel: 'Veículo de preferência *', vehicleSelect: 'Selecione o veículo',
-      reviewButton: 'Revisar trajeto', privacy: 'Os detalhes do trajeto são usados para preparar a mensagem. O envio é confirmado no WhatsApp.',
+      reviewButton: 'Revisar solicitação', privacy: 'O nome e os detalhes do trajeto são usados para preparar a mensagem. O envio é confirmado no WhatsApp.',
       previewLabel: 'SEU VEÍCULO DE PREFERÊNCIA', vehicleEmpty: 'Escolha um modelo', vehicleEmptyHelp: 'A foto do veículo aparecerá aqui após a escolha.',
-      availability: 'Disponibilidade e valor são confirmados pela equipe antes da reserva.',
-      reviewEyebrow: 'ANTES DE CONTINUAR', reviewTitle: 'Confira seu trajeto.', edit: 'Editar informações',
-      continueButton: 'Continuar no WhatsApp', fallback: 'Abrir a mensagem preparada no WhatsApp',
+      availability: 'Após o envio, a equipe informa o orçamento e a disponibilidade. A reserva depende da confirmação do atendimento.',
+      reviewEyebrow: 'ANTES DE CONTINUAR', reviewTitle: 'Confira sua solicitação.', edit: 'Editar informações',
+      messagePreview: 'Ver mensagem que será aberta no WhatsApp',
+      continueButton: 'Solicitar orçamento pelo WhatsApp', fallback: 'Abrir a mensagem preparada no WhatsApp',
       finalNote: 'No WhatsApp, confira a mensagem e toque em enviar.',
       ready: 'Mensagem preparada. Se a nova aba não abriu, utilize o link abaixo. O pedido só é enviado após a confirmação no WhatsApp.',
-      changed: 'As informações foram alteradas. Revise o trajeto novamente antes de continuar.',
+      changed: 'As informações foram alteradas. Revise a solicitação novamente antes de continuar.',
       errorsTitle: 'Confira os campos indicados para continuar:', requiredError: 'Preencha este campo.',
       serviceError: 'Selecione um serviço válido.', vehicleError: 'Selecione um veículo de preferência.',
       dateError: 'Informe uma data válida, de hoje em diante.', timeError: 'Escolha uma data e um horário futuros no fuso de São Paulo.',
       leadError: 'Este horário não atende à antecedência configurada. Escolha um horário posterior.',
       clockError: 'Não foi possível validar o horário. Fale com a equipe pelo WhatsApp do site.',
       longError: 'O texto ultrapassa o limite deste campo.', whatsappError: 'Não foi possível preparar o WhatsApp. Use o contato informado no site.',
-      messageIntro: 'Olá! Gostaria de consultar um trajeto com a High Business Class.',
-      messageEnd: 'Por favor, confirmem a disponibilidade do veículo, o valor e as condições do atendimento. Entendo que este pedido não confirma uma reserva.',
+      messageIntro: 'Olá, equipe High Business Class! Gostaria de solicitar um orçamento para o atendimento abaixo:',
+      messageEnd: 'Por favor, informem o valor, a disponibilidade do veículo e as condições do serviço. Aguardo a confirmação da equipe para concluir a reserva.',
       saoPaulo: 'horário de São Paulo'
     },
     en: {
       eyebrow: 'PLAN YOUR JOURNEY', title: 'Your next appointment starts here.',
-      intro: 'Enter your journey, date and preferred vehicle. Then review the details to continue on WhatsApp.',
+      intro: 'Enter your name and journey details. Then review your request and continue on WhatsApp to receive a quote.',
+      name: 'Name', nameLabel: 'Name *', namePlaceholder: 'Name for this enquiry',
       required: '* Required fields', service: 'Service', serviceLabel: 'Service *', serviceSelect: 'Select a service',
       aeroporto: 'Airport transfers', corporativo: 'Corporate transportation', disposicao: 'Chauffeur at disposal',
       eventos: 'Events', hoteis: 'Hotels & FBO', receptivo: 'Executive Meet & Greet',
@@ -45,22 +48,23 @@
       destination: 'Destination', destinationLabel: 'Destination *', destinationPlaceholder: 'Hotel, appointment or arrival address',
       date: 'Date', dateLabel: 'Date *', time: 'Time', timeLabel: 'Time *', timeHelp: 'São Paulo local time.',
       vehicle: 'Preferred vehicle', vehicleLabel: 'Preferred vehicle *', vehicleSelect: 'Select a vehicle',
-      reviewButton: 'Review journey', privacy: 'Journey details are used to prepare the message. Sending is confirmed on WhatsApp.',
+      reviewButton: 'Review request', privacy: 'Your name and journey details are used to prepare the message. Sending is confirmed on WhatsApp.',
       previewLabel: 'YOUR PREFERRED VEHICLE', vehicleEmpty: 'Choose a model', vehicleEmptyHelp: 'Your selected vehicle photo will appear here.',
-      availability: 'Our team confirms availability and pricing before the booking.',
-      reviewEyebrow: 'BEFORE YOU CONTINUE', reviewTitle: 'Review your journey.', edit: 'Edit details',
-      continueButton: 'Continue on WhatsApp', fallback: 'Open the prepared message on WhatsApp',
+      availability: 'After you send the request, our team provides a quote and checks availability. A booking requires confirmation from our team.',
+      reviewEyebrow: 'BEFORE YOU CONTINUE', reviewTitle: 'Review your request.', edit: 'Edit details',
+      messagePreview: 'View the message that will open on WhatsApp',
+      continueButton: 'Request a quote on WhatsApp', fallback: 'Open the prepared message on WhatsApp',
       finalNote: 'On WhatsApp, review the message and tap send.',
       ready: 'Your message is ready. If the new tab did not open, use the link below. Your request is only sent after confirmation on WhatsApp.',
-      changed: 'The details have changed. Please review your journey again before continuing.',
+      changed: 'The details have changed. Please review your request again before continuing.',
       errorsTitle: 'Please check the indicated fields before continuing:', requiredError: 'Please complete this field.',
       serviceError: 'Please select a valid service.', vehicleError: 'Please select your preferred vehicle.',
       dateError: 'Please enter today or a valid future date.', timeError: 'Please choose a future date and time in the São Paulo time zone.',
       leadError: 'This time does not meet the configured advance notice. Please choose a later time.',
       clockError: 'We could not validate the time. Please use the website WhatsApp contact to speak to our team.',
       longError: 'This text exceeds the field limit.', whatsappError: 'We could not prepare WhatsApp. Please use the contact details on this website.',
-      messageIntro: 'Hello! I would like to enquire about a journey with High Business Class.',
-      messageEnd: 'Please confirm vehicle availability, pricing and service conditions. I understand that this request does not confirm a booking.',
+      messageIntro: 'Hello, High Business Class team! I would like to request a quote for the service below:',
+      messageEnd: 'Please let me know the price, vehicle availability and service conditions. I will wait for confirmation from your team to complete the booking.',
       saoPaulo: 'São Paulo time'
     }
   };
@@ -93,7 +97,7 @@
 
   const scope = document.getElementById('pre-agendamento');
   const form = document.getElementById('booking-form');
-  window.HBCBooking = {version: '2.0.0', isFutureDateTime: isFutureDateTime, setLanguage: setLanguage};
+  window.HBCBooking = {version: '2.1.0', isFutureDateTime: isFutureDateTime, setLanguage: setLanguage};
   if (!scope || !form) return;
   const field = function (name) { return form.elements.namedItem(name); };
   const node = function (id) { return document.getElementById('booking-' + id); };
@@ -108,6 +112,7 @@
   function readDraft() {
     const draft = {};
     draftFields.forEach(function (name) { draft[name] = String(field(name).value || '').trim(); });
+    draft.name = draft.name.replace(/\s+/g, ' ');
     return draft;
   }
   function setStatus(key) { statusKey = key; node('status').textContent = key ? t(key) : ''; }
@@ -150,7 +155,7 @@
       const item = document.createElement('li');
       const link = document.createElement('a');
       link.href = '#' + element.id;
-      link.textContent = t(errors[name]);
+      link.textContent = t(name) + ': ' + t(errors[name]);
       link.addEventListener('click', function (event) { event.preventDefault(); element.focus(); });
       item.appendChild(link); list.appendChild(item);
     });
@@ -166,6 +171,8 @@
     const wasReviewed = !!reviewed;
     reviewed = null; opened = false;
     review.hidden = true;
+    node('review-details').replaceChildren();
+    node('message').textContent = '';
     continueButton.disabled = true;
     fallback.hidden = true; fallback.removeAttribute('href');
     if (changed && wasReviewed) setStatus('changed');
@@ -180,9 +187,9 @@
     errors = {};
     if (!serviceIds.includes(draft.service)) errors.service = 'serviceError';
     if (!vehicleIn(draft.vehicle)) errors.vehicle = 'vehicleError';
-    ['origin', 'destination'].forEach(function (name) {
+    ['name', 'origin', 'destination'].forEach(function (name) {
       if (!draft[name]) errors[name] = 'requiredError';
-      else if (draft[name].length > 180) errors[name] = 'longError';
+      else if (draft[name].length > (name === 'name' ? 100 : 180)) errors[name] = 'longError';
     });
     updateDateMinimum();
     const future = isFutureDateTime(draft.date, draft.time);
@@ -195,7 +202,7 @@
   function summaryEntries(draft) {
     const vehicle = vehicleIn(draft.vehicle);
     return [
-      ['service', t(draft.service)], ['origin', draft.origin], ['destination', draft.destination],
+      ['name', draft.name], ['service', t(draft.service)], ['origin', draft.origin], ['destination', draft.destination],
       ['date', dateLabel(draft.date)], ['time', draft.time + ' · ' + t('saoPaulo')],
       ['vehicle', vehicle ? vehicle.name : '']
     ];
@@ -211,16 +218,21 @@
       dt.textContent = t(entry[0]); dd.textContent = entry[1];
       row.appendChild(dt); row.appendChild(dd); details.appendChild(row);
     });
+    node('message').textContent = messageText();
     if (opened) fallback.href = messageUrl();
+  }
+  function messageText() {
+    if (!reviewed) return '';
+    const lines = [t('messageIntro'), ''];
+    summaryEntries(reviewed).forEach(function (entry) { lines.push(t(entry[0]) + ': ' + entry[1]); });
+    lines.push('', t('messageEnd'));
+    return lines.join('\n');
   }
   function messageUrl() {
     if (!reviewed) return '';
     const whatsapp = String(config.whatsapp || (window.HBC_CONFIG || {}).whatsapp || '5511960781389').replace(/\D/g, '');
     if (!/^\d{10,15}$/.test(whatsapp)) return '';
-    const lines = [t('messageIntro'), ''];
-    summaryEntries(reviewed).forEach(function (entry) { lines.push(t(entry[0]) + ': ' + entry[1]); });
-    lines.push('', t('messageEnd'));
-    return 'https://wa.me/' + whatsapp + '?text=' + encodeURIComponent(lines.join('\n'));
+    return 'https://wa.me/' + whatsapp + '?text=' + encodeURIComponent(messageText());
   }
   function setLanguage(next) {
     if (next !== 'pt' && next !== 'en') return;
@@ -252,7 +264,7 @@
     clearReview(false); errors = {}; renderErrors();
     setTimeout(renderPreview, 0);
   });
-  node('edit').addEventListener('click', function () { clearReview(false); field('service').focus(); });
+  node('edit').addEventListener('click', function () { clearReview(false); field('name').focus(); });
   continueButton.addEventListener('click', function () {
     if (!reviewed) return;
     const previous = reviewed;
