@@ -122,6 +122,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   .theme-toggle [data-theme-label] { display: none; }
 }
 @media (max-width: 700px) {
+  .hero-photo {
+    height: 360px;
+    object-position: 70% center;
+    mask-image: linear-gradient(to bottom, #000 70%, transparent 100%);
+  }
   .header-inner { min-height: 73px; gap: 10px; }
   .header-actions { gap: 7px; }
   .theme-toggle, .header-instagram { width: 36px; min-height: 38px; padding: 7px; }

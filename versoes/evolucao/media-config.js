@@ -63,44 +63,6 @@ window.HBC_MEDIA = {
             "pt": "Executivos recebendo atendimento de motorista",
             "en": "Executives receiving chauffeur service"
           }
-        },
-        {
-          "src": "assets/galerias/hoteis/arquitetura-urbana.webp",
-          "alt": {
-            "pt": "Fachada de hotel com arquitetura curva em área urbana",
-            "en": "Hotel with a curved façade in an urban area"
-          },
-          "fit": "cover",
-          "position": "center"
-        },
-        {
-          "src": "assets/galerias/hoteis/torre-hotel.webp",
-          "alt": {
-            "pt": "Torre de hotel em São Paulo",
-            "en": "Hotel tower in São Paulo"
-          },
-          "fit": "contain",
-          "position": "center"
-        }
-      ],
-      "related": [
-        {
-          "src": "assets/galerias/hoteis/arquitetura-urbana.webp",
-          "alt": {
-            "pt": "Fachada de hotel com arquitetura curva em área urbana",
-            "en": "Hotel with a curved façade in an urban area"
-          },
-          "fit": "cover",
-          "position": "center"
-        },
-        {
-          "src": "assets/galerias/hoteis/torre-hotel.webp",
-          "alt": {
-            "pt": "Torre de hotel em São Paulo",
-            "en": "Hotel tower in São Paulo"
-          },
-          "fit": "contain",
-          "position": "center"
         }
       ]
     },
@@ -116,44 +78,6 @@ window.HBC_MEDIA = {
             "pt": "Passageira no banco traseiro durante um trajeto",
             "en": "A passenger in the back seat during a journey"
           }
-        },
-        {
-          "src": "assets/galerias/hoteis/entrada-urbana.webp",
-          "alt": {
-            "pt": "Entrada de hotel em avenida de São Paulo",
-            "en": "Hotel entrance on an avenue in São Paulo"
-          },
-          "fit": "cover",
-          "position": "center"
-        },
-        {
-          "src": "assets/frota/mercedes.webp",
-          "alt": {
-            "pt": "Mercedes-Benz apresentada na frota executiva",
-            "en": "Mercedes-Benz featured in the executive fleet"
-          },
-          "fit": "contain",
-          "position": "center"
-        }
-      ],
-      "related": [
-        {
-          "src": "assets/galerias/hoteis/entrada-urbana.webp",
-          "alt": {
-            "pt": "Entrada de hotel em avenida de São Paulo",
-            "en": "Hotel entrance on an avenue in São Paulo"
-          },
-          "fit": "cover",
-          "position": "center"
-        },
-        {
-          "src": "assets/frota/mercedes.webp",
-          "alt": {
-            "pt": "Mercedes-Benz apresentada na frota executiva",
-            "en": "Mercedes-Benz featured in the executive fleet"
-          },
-          "fit": "contain",
-          "position": "center"
         }
       ]
     },
@@ -169,44 +93,6 @@ window.HBC_MEDIA = {
             "pt": "Convidados sendo recebidos para um evento",
             "en": "Guests being welcomed for an event"
           }
-        },
-        {
-          "src": "assets/galerias/hoteis/hotel-piscina.webp",
-          "alt": {
-            "pt": "Fachada de hotel e área externa com piscina",
-            "en": "Hotel façade and outdoor pool area"
-          },
-          "fit": "cover",
-          "position": "center"
-        },
-        {
-          "src": "assets/galerias/hoteis/arquitetura-urbana.webp",
-          "alt": {
-            "pt": "Fachada de hotel com arquitetura curva em área urbana",
-            "en": "Hotel with a curved façade in an urban area"
-          },
-          "fit": "cover",
-          "position": "center"
-        }
-      ],
-      "related": [
-        {
-          "src": "assets/galerias/hoteis/hotel-piscina.webp",
-          "alt": {
-            "pt": "Fachada de hotel e área externa com piscina",
-            "en": "Hotel façade and outdoor pool area"
-          },
-          "fit": "cover",
-          "position": "center"
-        },
-        {
-          "src": "assets/galerias/hoteis/arquitetura-urbana.webp",
-          "alt": {
-            "pt": "Fachada de hotel com arquitetura curva em área urbana",
-            "en": "Hotel with a curved façade in an urban area"
-          },
-          "fit": "cover",
-          "position": "center"
         }
       ]
     },
@@ -291,44 +177,6 @@ window.HBC_MEDIA = {
             "pt": "Casal de turistas sendo acolhido com suas malas",
             "en": "A travelling couple being welcomed with their luggage"
           }
-        },
-        {
-          "src": "assets/galerias/aeroporto/terminal-diurno.webp",
-          "alt": {
-            "pt": "Estrutura de terminal aeroportuário durante o dia",
-            "en": "Airport terminal structure during the day"
-          },
-          "fit": "cover",
-          "position": "center"
-        },
-        {
-          "src": "assets/galerias/hoteis/hotel-arborizado.webp",
-          "alt": {
-            "pt": "Hotel cercado por área arborizada",
-            "en": "Hotel surrounded by trees"
-          },
-          "fit": "cover",
-          "position": "center"
-        }
-      ],
-      "related": [
-        {
-          "src": "assets/galerias/aeroporto/terminal-diurno.webp",
-          "alt": {
-            "pt": "Estrutura de terminal aeroportuário durante o dia",
-            "en": "Airport terminal structure during the day"
-          },
-          "fit": "cover",
-          "position": "center"
-        },
-        {
-          "src": "assets/galerias/hoteis/hotel-arborizado.webp",
-          "alt": {
-            "pt": "Hotel cercado por área arborizada",
-            "en": "Hotel surrounded by trees"
-          },
-          "fit": "cover",
-          "position": "center"
         }
       ]
     },
