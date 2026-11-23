@@ -12,8 +12,8 @@ from urllib.parse import quote, unquote
 
 
 GALLERIES = {
-    "aeroporto": ("Transfer aeroporto", "Airport transfers", "assets/novas/aeroporto.webp"),
-    "corporativo": ("Transporte corporativo", "Corporate transportation", "assets/novas/corporativo.webp"),
+    "aeroporto": ("Transfer aeroporto", "Airport transfers", "assets/novas/transferofc001.webp"),
+    "corporativo": ("Transporte corporativo", "Corporate transportation", "assets/novas/corporativoofc001.webp"),
     "disposicao": ("Disposição executiva", "Chauffeur at disposal", "assets/novas/disposicao.webp"),
     "eventos": ("Eventos", "Events", "assets/novas/eventos.webp"),
     "hoteis": ("Hotéis & FBO", "Hotels & FBO", "assets/novas/hoteis-fbo.webp"),

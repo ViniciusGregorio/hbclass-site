@@ -16,10 +16,10 @@ window.HBC_MEDIA = {
       },
       "slides": [
         {
-          "src": "assets/novas/aeroporto.webp",
+          "src": "assets/novas/transferofc001.webp",
           "alt": {
-            "pt": "Passageira com bagagem sendo recebida no aeroporto",
-            "en": "A passenger with luggage being welcomed at the airport"
+            "pt": "Motorista recebe passageiro junto a um sedã em terminal de aviação executiva",
+            "en": "Chauffeur welcoming a passenger beside a sedan at an executive aviation terminal"
           }
         },
         {
@@ -58,10 +58,10 @@ window.HBC_MEDIA = {
       },
       "slides": [
         {
-          "src": "assets/novas/corporativo.webp",
+          "src": "assets/novas/corporativoofc001.webp",
           "alt": {
-            "pt": "Executivos recebendo atendimento de motorista",
-            "en": "Executives receiving chauffeur service"
+            "pt": "Passageiro de terno usa notebook no banco traseiro de um veículo executivo",
+            "en": "Passenger in a suit using a laptop in the rear seat of an executive vehicle"
           }
         }
       ]

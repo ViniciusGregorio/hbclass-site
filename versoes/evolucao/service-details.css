@@ -1,0 +1,71 @@
+/* Short service explanations, using the site's existing colors and typefaces. */
+html { scrollbar-gutter: stable; }
+html.service-dialog-open { overflow: hidden; }
+.service { display: flex; flex-direction: column; }
+.service-img { flex-shrink: 0; }
+.service-body { display: flex; flex: 1; flex-direction: column; }
+.service-actions {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 10px; margin-top: auto; padding-top: 15px; border-top: 1px solid #d3d5d4;
+}
+.service-more {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 42px; padding: 9px 14px; border: 1px solid #bba47a; border-radius: 24px;
+  background: #f5efdf; color: #714d13; font-size: 11px; font-weight: 600;
+}
+.service-more:hover { background: #ece0c4; border-color: #795415; }
+.service-more:focus-visible { outline-color: #795415; }
+.service-more .icon { width: 15px; height: 15px; }
+.service-actions .text-link { width: auto; margin-left: auto; padding: 0; border: 0; font-size: 11px; }
+.service-dialog {
+  position: fixed; inset: 0; width: min(820px, calc(100vw - 40px)); max-width: none;
+  max-height: calc(100dvh - 40px); margin: auto; padding: 0; overflow: auto;
+  overscroll-behavior: contain; background: var(--hbc-surface, #111d25); color: var(--hbc-text, #f6f4ef);
+  border: 1px solid var(--hbc-line, #354651); border-radius: 14px; box-shadow: 0 24px 90px #0007;
+}
+.service-dialog:not([open]) { display: none; }
+.service-dialog::backdrop { background: #030a10c9; backdrop-filter: blur(5px); }
+.service-dialog-close {
+  position: sticky; top: 12px; z-index: 2; display: grid; place-items: center; float: right;
+  width: 40px; height: 40px; margin: 12px 12px -52px 0; padding: 0;
+  border: 1px solid #ffffff80; border-radius: 50%; background: #081119e8; color: #fff;
+}
+.service-dialog-close:hover { background: #283e4c; }
+.service-dialog-close .icon { width: 20px; height: 20px; }
+.service-dialog-visual { width: 100%; height: 220px; background: var(--hbc-surface-alt, #0d161d); }
+.service-dialog-visual img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
+#service-dialog-corporativo .service-dialog-visual img { object-position: center 15%; }
+.service-dialog-content { padding: 28px 32px 30px; }
+.service-dialog-kicker {
+  margin: 0 0 7px; color: var(--hbc-gold, #f2c56f); font-size: 10px; font-weight: 600;
+  letter-spacing: 1.8px; line-height: 1.7; text-transform: uppercase;
+}
+.service-dialog h2 { margin: 0 0 25px; font-size: 39px; line-height: 1.08; }
+.service-dialog-details { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 28px; }
+.service-detail h3 {
+  margin: 0 0 7px; font-family: Inter, Arial, sans-serif; font-size: 13px;
+  font-weight: 600; line-height: 1.5; color: var(--hbc-text, #f6f4ef);
+}
+.service-detail p { margin: 0; font-size: 13px; line-height: 1.8; color: var(--hbc-muted, #b8c2c8); }
+.service-dialog-actions {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
+  margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--hbc-line, #354651);
+}
+.service-dialog-back {
+  min-height: 44px; padding: 9px 10px; border: 0; background: transparent;
+  color: var(--hbc-muted, #b8c2c8); font-size: 12px; text-decoration: underline; text-underline-offset: 4px;
+}
+@media (max-width: 600px) {
+  .service-dialog { width: calc(100vw - 24px); max-height: calc(100dvh - 24px); border-radius: 10px; }
+  .service-dialog-visual { height: 170px; }
+  .service-dialog-content { padding: 23px 22px 24px; }
+  .service-dialog h2 { font-size: 33px; margin-bottom: 22px; }
+  .service-dialog-details { grid-template-columns: 1fr; gap: 18px; }
+  .service-detail p { font-size: 12px; line-height: 1.8; }
+  .service-dialog-actions { gap: 8px; margin-top: 22px; padding-top: 19px; }
+  .service-dialog-actions .btn { flex: 1; padding-inline: 16px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .service-dialog[open] { animation: service-appear .18s ease-out; }
+  @keyframes service-appear { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+}
