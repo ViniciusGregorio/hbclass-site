@@ -26,6 +26,27 @@ Revise as descrições em português e inglês no arquivo `media-config.js`. A e
 
 As fontes locais em `assets/fonts/` acompanham suas licenças OFL. Preserve esses arquivos ao atualizar o site.
 
+## Planejamento e privacidade
+
+O planejamento pede apenas serviço, origem, destino, data, horário e veículo de preferência. Os seis dados são revisados no navegador antes de abrir o WhatsApp. O link aberto nesse serviço inclui o resumo; a mensagem chega à HBC depois que o visitante confirma o envio no WhatsApp. O formulário não salva o trajeto em cookies, armazenamento local ou banco de dados próprio.
+
+A página `privacidade.html` apresenta a política em português e inglês. O rodapé e o formulário dão acesso à política; as preferências podem ser reabertas pelo rodapé. A identificação pública, o contato, a versão da política e os controles de estatísticas ficam em `privacy-config.js`. A razão social deve ser preenchida em `controllerLegalName` quando confirmada pelo responsável. Atualize a política e `policyVersion` quando houver mudança relevante de finalidade ou tratamento.
+
+## Preparar o Google Analytics 4
+
+A integração é entregue desativada. Sem ID, ativação e revisão da configuração, nenhuma tag do Google é carregada. Depois da ativação, o visitante recebe opções equivalentes para aceitar ou rejeitar estatísticas. A recusa mantém todo o atendimento disponível. A revogação bloqueia a ferramenta, remove cookies acessíveis e recarrega a página.
+
+1. Acesse [Google Analytics](https://analytics.google.com/) com uma conta controlada pela empresa. Em **Administrador → Criar → Conta**, crie a conta High Business Class e revise as opções de compartilhamento. O responsável pela empresa deve manter acesso administrativo.
+2. Crie uma propriedade **High Business Class**, com fuso de **São Paulo** e moeda **BRL**. Preencha as informações e os objetivos correspondentes à empresa e confira os termos exibidos pelo Google.
+3. Em **Fluxos de dados → Adicionar fluxo → Web**, informe o endereço publicado do site e um nome para o fluxo. O endereço pode ser atualizado quando o domínio passar a apontar para o novo site.
+4. **Desative toda a Medição otimizada** no fluxo Web antes de ativar esta integração. Revise também a detecção automática de eventos/configurações da tag, mantendo desativadas coletas adicionais de formulários, links externos, pesquisas, histórico e dados fornecidos pelo usuário. Preserve Google Signals e recursos de publicidade desativados; revise retenção, compartilhamento e condições de transferência internacional na conta. `send_page_view: false`, sozinho, não desativa as medições configuradas no painel.
+5. Copie o **ID de medição**, que começa com `G-`. O código da tag já está integrado ao site; basta informar esse ID em `analytics.measurementId`, no arquivo `privacy-config.js`. Depois da revisão da etapa anterior e da política, altere `analytics.enabled` e `analytics.setupReviewed` para `true`.
+6. Prepare e publique pelo fluxo manual do repositório. Em uma janela sem preferências anteriores, confirme a ausência de conexões ao Google antes de escolher, aceite as estatísticas e confira o relatório **Tempo real** do GA4. Teste também rejeitar e revogar pelo rodapé. Extensões de bloqueio podem impedir a medição mesmo com autorização.
+
+As únicas interações encaminhadas por esta integração são categorias de ação, serviço e posição na página. A revisão do planejamento e a continuação para o WhatsApp usam eventos próprios; a origem, o destino, a data, o horário, o veículo de preferência, a mensagem e o URL completo do WhatsApp ficam fora deles. URLs enviadas ao Analytics não incluem parâmetros, fragmentos ou o endereço de origem da visita. A medição automática deve continuar desativada no painel para preservar esse comportamento.
+
+Documentação de referência: [configuração do GA4](https://support.google.com/analytics/answer/14183469?hl=pt-BR), [Medição otimizada](https://support.google.com/analytics/answer/9216061?hl=pt-BR), [consentimento básico do Google](https://developers.google.com/tag-platform/security/concepts/consent-mode), [orientações da ANPD sobre cookies](https://www.gov.br/anpd/pt-br/assuntos/noticias/anpd-emite-recomendacoes-para-adequacao-da-pratica-de-coleta-de-cookies-do-portal-gov.br).
+
 ## Conferir e preparar a publicação
 
 ```sh

@@ -12,7 +12,7 @@ window.HBC_CONFIG = {
   siteUrl: 'https://hbclass.com.br',
   timeZone: 'America/Sao_Paulo',
   menuBreakpoint: 1180,
-  // Emite apenas eventos locais hbc:action; não instala analytics ou cookies.
+  // Eventos locais hbc:action. O envio ao Analytics depende da configuração e do consentimento em privacy.js.
   emitEvents: true,
   seo: {
     pt: {

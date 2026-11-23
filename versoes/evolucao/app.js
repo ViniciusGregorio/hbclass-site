@@ -7,7 +7,7 @@
     email: 'high.class.agendamentos@gmail.com',
     instagramUrl: '',
     timeZone: 'America/Sao_Paulo',
-    menuBreakpoint: 960,
+    menuBreakpoint: 1180,
     emitEvents: true
   }, window.HBC_CONFIG || {});
   const serviceIds = ['aeroporto', 'corporativo', 'disposicao', 'eventos', 'hoteis', 'receptivo', 'assistants', 'familyoffice'];
@@ -96,6 +96,7 @@
   const fallback = document.getElementById('quote-fallback');
   const menu = document.getElementById('site-nav');
   const menuToggle = document.getElementById('menu-toggle');
+  const serviceNavigation = document.getElementById('nav-services');
   const gallery = document.getElementById('gallery-dialog');
   const galleryImage = document.getElementById('gallery-image');
   const galleryCaption = document.getElementById('gallery-caption');
@@ -183,6 +184,7 @@
     document.documentElement.classList.toggle('menu-open', open);
     menuToggle.setAttribute('aria-expanded', String(open));
     menuToggle.setAttribute('aria-label', t(open ? 'aria.menuClose' : 'aria.menuOpen'));
+    if (serviceNavigation) serviceNavigation.open = !!(open && window.innerWidth <= Number(config.menuBreakpoint));
     if (returnFocus) menuToggle.focus({ preventScroll: true });
   }
 
@@ -240,6 +242,17 @@
     window.addEventListener('resize', function () {
       if (window.innerWidth > Number(config.menuBreakpoint || 960)) setMenu(false, false);
     }, { passive: true });
+  }
+
+  if (serviceNavigation) {
+    document.addEventListener('click', function (event) {
+      if (serviceNavigation.open && !serviceNavigation.contains(event.target) && !menuToggle.contains(event.target)) serviceNavigation.open = false;
+    });
+    serviceNavigation.addEventListener('focusout', function () {
+      window.setTimeout(function () {
+        if (window.innerWidth > Number(config.menuBreakpoint) && !serviceNavigation.contains(document.activeElement)) serviceNavigation.open = false;
+      }, 0);
+    });
   }
 
   document.querySelectorAll('a[data-whatsapp]').forEach(function (link) {
@@ -498,6 +511,10 @@
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
       if (gallery && gallery.hasAttribute('open')) closeGallery();
+      else if (serviceNavigation && serviceNavigation.open) {
+        serviceNavigation.open = false;
+        serviceNavigation.querySelector('summary').focus({ preventScroll: true });
+      }
       else if (menuIsOpen()) setMenu(false, true);
     }
     // Native <dialog> traps focus. This is only for older browsers without it.
