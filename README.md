@@ -26,6 +26,29 @@ Revise as descrições em português e inglês no arquivo `media-config.js`. A e
 
 As fontes locais em `assets/fonts/` acompanham suas licenças OFL. Preserve esses arquivos ao atualizar o site.
 
+## Capacidades da frota
+
+Os cartões usam configurações de referência pesquisadas em 23/11/2026. Passageiros são lugares além do motorista. Ano, versão e configuração do veículo efetivamente disponibilizado devem ser confirmados no atendimento; o Commander também possui versões de cinco lugares. Os seletores dos SUVs representam as versões de sete lugares, com terceira fileira em uso ou rebatida, atualizando passageiros e bagagem juntos.
+
+A quantidade de malas é uma **estimativa volumétrica do site solicitada pelo responsável**, e não uma contagem certificada pelo fabricante ou um teste físico de encaixe. O seletor compara malas de um tamanho por vez, sem somar pequenas, médias e grandes. Valores iniciais: malas médias e terceira fileira em uso nos SUVs.
+
+| Referência | Passageiros | Porta-malas | Pequenas ≈ | Médias ≈ | Grandes ≈ |
+|---|---:|---:|---:|---:|---:|
+| Mercedes-Benz E 300 sedã | 4 | 540 L | 6 | 3 | 2 |
+| Toyota Corolla sedã, ficha 2026 | 4 | 470 L | 5 | 3 | 2 |
+| Commander, sete lugares, terceira fileira em uso | 6 | 233 L | 2 | 1 | 1 |
+| Commander, terceira fileira rebatida | 4 | 661 L | 7 | 4 | 3 |
+| Volvo XC90 T8 2026, terceira fileira em uso | 6 | 244 L | 2 | 1 | 1 |
+| Volvo XC90 T8 2026, terceira fileira rebatida | 4 | 650 L | 7 | 4 | 3 |
+
+O cálculo usa as dimensões de referência sem expansão: pequena 55 × 40 × 23 cm (50,6 L externos teóricos), média 68 × 45 × 28 cm (85,68 L) e grande 75 × 51 × 32 cm (122,4 L). A fórmula é `floor(porta-malas em litros × 0,60 / volume externo da mala em litros)`. A fração de 60% é uma hipótese própria para reservar espaço não aproveitado; não é fator validado pelo fabricante. Abertura, formato do compartimento e das malas, equipamentos e peso podem alterar o resultado. O volume externo calculado não corresponde à capacidade interna de roupas anunciada pelo fabricante da mala.
+
+Dados e lógica ficam em `fleet-capacity.js`; os valores iniciais sem JavaScript estão no HTML e devem acompanhar qualquer alteração dos dados. Aparência e controles ficam em `fleet-capacity.css`. Esses seletores não adicionam campos ao planejamento, não alteram o veículo selecionado no formulário e não enviam o conteúdo das escolhas a serviços externos.
+
+Fontes dos veículos: [Mercedes-Benz E 300 sedã](https://www2.mercedes-benz.com.br/passengercars/models/saloon/e-class/overview.html), [Toyota Brasil, Corolla 2026](https://media.toyota.com.br/18601352-66bd-4d30-865c-c0b0344be76f.pdf), [Toyota Corolla Sedan, lugares](https://www.toyota.pt/carros/corolla-sedan/configurador?financeOption=cash), [Jeep Commander, versões e ocupação](https://www.media.stellantis.com/br-pt/jeep/press/novo-jeep-commander-2025-chega-com-novo-motor-hurricane-2-0-turbo-de-272-cv-tecnologias-de-conducao-semiautonoma-de-nivel-2-em-todas-as-versoes-e-garantia-de-5-anos), [Volvo XC90, especificações](https://www.volvocars.com/br/cars/xc90-hybrid/specifications/).
+
+Referências das dimensões: [Samsonite BOSS pequena](https://samsonite.com.br/products/mala-pequena-boss-samsonite-graphite-monogram), [Samsonite Odyssey média](https://samsonite.com.br/products/mala-media-odyssey-preta), [Samsonite Magnum Eco grande](https://samsonite.com.br/products/mala-grande-magnum-eco-graphite).
+
 ## Planejamento e privacidade
 
 O planejamento pede apenas serviço, origem, destino, data, horário e veículo de preferência. Os seis dados são revisados no navegador antes de abrir o WhatsApp. O link aberto nesse serviço inclui o resumo; a mensagem chega à HBC depois que o visitante confirma o envio no WhatsApp. O formulário não salva o trajeto em cookies, armazenamento local ou banco de dados próprio.

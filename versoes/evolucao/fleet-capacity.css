@@ -1,0 +1,207 @@
+/* Fleet capacities: icon-led details in the site's existing colour palette. */
+.fleet-luggage-tools {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin: 0 0 24px;
+  padding: 16px 18px;
+  border: 1px solid var(--hbc-line, #354651);
+  border-radius: var(--radius, 8px);
+  background: var(--hbc-surface, #111d25);
+}
+.fleet-luggage-tools > p:not(.fleet-luggage-reference):not(.fleet-capacity-status) {
+  margin: 0;
+  color: var(--hbc-text, #f6f4ef);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.fleet-luggage-heading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  min-width: 0;
+}
+.fleet-luggage-heading > p {
+  margin: 0;
+  color: var(--hbc-text, #f6f4ef);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.fleet-luggage-sizes {
+  display: inline-flex;
+  gap: 4px;
+  max-width: 100%;
+  padding: 4px;
+  border: 1px solid var(--hbc-line, #354651);
+  border-radius: 7px;
+  background: var(--hbc-input, #0b151c);
+}
+.fleet-luggage-size {
+  flex: 1;
+  min-height: 40px;
+  padding: 9px 13px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--hbc-muted, #b8c2c8);
+  font: 500 11px/1.35 Inter, Arial, sans-serif;
+  white-space: nowrap;
+}
+.fleet-luggage-size:hover {
+  border-color: var(--hbc-gold, #f2c56f);
+  color: var(--hbc-text, #f6f4ef);
+}
+.fleet-luggage-size[aria-pressed="true"] {
+  border-color: var(--hbc-gold, #f2c56f);
+  background: var(--hbc-gold, #f2c56f);
+  color: var(--hbc-bg, #091015);
+  font-weight: 600;
+}
+.fleet-luggage-reference {
+  flex-basis: 100%;
+  margin: 0;
+  color: var(--hbc-muted, #b8c2c8);
+  font-size: 11px;
+  line-height: 1.65;
+}
+.fleet-capacity-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  clip: rect(0, 0, 0, 0);
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+}
+.fleet-grid .vehicle {
+  display: flex;
+  flex-direction: column;
+}
+.fleet-grid .vehicle-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.fleet-capacity-group {
+  margin-bottom: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--hbc-line, #354651);
+}
+.fleet-capacity {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.fleet-capacity-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+.fleet-capacity-item > .icon {
+  width: 23px;
+  height: 27px;
+  color: var(--hbc-gold, #f2c56f);
+  stroke-width: 1.5;
+}
+.fleet-capacity-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+.fleet-capacity-value {
+  color: var(--hbc-text, #f6f4ef);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.25;
+  font-variant-numeric: tabular-nums;
+}
+.fleet-capacity-label {
+  color: var(--hbc-muted, #b8c2c8);
+  font-size: 9.5px;
+  font-weight: 400;
+  line-height: 1.35;
+}
+.fleet-capacity-note {
+  margin: 11px 0 0;
+  color: var(--hbc-muted, #b8c2c8);
+  font-size: 10px;
+  line-height: 1.6;
+}
+.fleet-capacity-section-note {
+  max-width: 920px;
+  margin: 18px 0 0;
+  color: var(--hbc-muted, #b8c2c8);
+  font-size: 11px;
+  line-height: 1.7;
+}
+.fleet-seating-control {
+  display: block;
+  margin: 0 0 13px;
+}
+.fleet-capacity + .fleet-seating-control {
+  margin-top: 14px;
+}
+.fleet-seating-control label,
+.fleet-seating-control > span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--hbc-muted, #b8c2c8);
+  font-size: 10px;
+  line-height: 1.5;
+}
+.fleet-seating-control select {
+  width: 100%;
+  min-height: 40px;
+  padding: 8px 9px;
+  border: 1px solid var(--hbc-line, #354651);
+  border-radius: 5px;
+  background: var(--hbc-input, #0b151c);
+  color: var(--hbc-text, #f6f4ef);
+  font: 500 11px/1.4 Inter, Arial, sans-serif;
+}
+.fleet-seating-control select:hover {
+  border-color: var(--hbc-gold, #f2c56f);
+}
+.fleet-grid .vehicle-links {
+  margin-top: auto;
+}
+.fleet-capacity-section-note {
+  max-width: 760px;
+  margin: 24px 0 0;
+  color: var(--hbc-muted, #b8c2c8);
+  font-size: 11px;
+  line-height: 1.8;
+}
+@media (min-width: 421px) and (max-width: 980px) {
+  .fleet-capacity-value { font-size: 14px; }
+  .fleet-capacity-label { font-size: 10px; }
+}
+@media (min-width: 421px) and (max-width: 600px) {
+  .fleet-capacity { grid-template-columns: 1fr; gap: 12px; }
+}
+@media (max-width: 420px) {
+  .fleet-luggage-tools { gap: 12px; padding: 14px; }
+  .fleet-luggage-heading { width: 100%; gap: 10px; }
+  .fleet-luggage-sizes { width: 100%; }
+  .fleet-luggage-size { padding-inline: 8px; }
+  .fleet-capacity { gap: 16px; }
+  .fleet-capacity-item { gap: 10px; }
+  .fleet-capacity-item > .icon { width: 26px; height: 30px; }
+  .fleet-capacity-value { font-size: 15px; }
+  .fleet-capacity-label { font-size: 11px; }
+  .fleet-capacity-note { font-size: 10.5px; }
+  .fleet-seating-control label,
+  .fleet-seating-control > span { font-size: 11px; }
+  .fleet-seating-control select { font-size: 12px; }
+}
