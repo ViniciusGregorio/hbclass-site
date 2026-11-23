@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   const config = window.HBC_BOOKING_CONFIG || {};
-  const serviceIds = ['aeroporto', 'corporativo', 'disposicao', 'eventos', 'hoteis', 'receptivo'];
+  const serviceIds = ['aeroporto', 'corporativo', 'disposicao', 'eventos', 'hoteis', 'receptivo', 'assistants', 'familyoffice'];
   const text = {
     pt: {
       eyebrow: 'PLANEJE SEU TRAJETO', title: 'Seu próximo compromisso começa aqui.',
@@ -11,7 +11,8 @@
       tripLegend: '01 · O seu trajeto', peopleLegend: '02 · Passageiros e veículo', contactLegend: '03 · Seus dados de contato',
       required: '* Campos obrigatórios', service: 'Serviço', serviceLabel: 'Serviço *', serviceSelect: 'Selecione o serviço',
       aeroporto: 'Transfer aeroporto', corporativo: 'Transporte corporativo', disposicao: 'Disposição executiva',
-      eventos: 'Eventos', hoteis: 'Hotéis & FBO', receptivo: 'Receptivo',
+      eventos: 'Eventos', hoteis: 'Hotéis & FBO', receptivo: 'Receptivo Executivo',
+      assistants: 'Assistants & Secretaries', familyoffice: 'Family Office & Private Clients',
       routeLabel: 'Rota de referência', routeCustom: 'Informar outro trajeto', routeHelp: 'Uma rota de referência utiliza a origem e o destino indicados. Para outro percurso, escolha “Informar outro trajeto”.',
       origin: 'Origem', originLabel: 'Origem *', originPlaceholder: 'Aeroporto, hotel ou endereço de saída',
       destination: 'Destino', destinationLabel: 'Destino *', destinationPlaceholder: 'Hotel, compromisso ou endereço de chegada',
@@ -57,7 +58,8 @@
       tripLegend: '01 · Your journey', peopleLegend: '02 · Passengers and vehicle', contactLegend: '03 · Your contact details',
       required: '* Required fields', service: 'Service', serviceLabel: 'Service *', serviceSelect: 'Select a service',
       aeroporto: 'Airport transfers', corporativo: 'Corporate transportation', disposicao: 'Chauffeur at disposal',
-      eventos: 'Events', hoteis: 'Hotels & FBO', receptivo: 'Meet & greet',
+      eventos: 'Events', hoteis: 'Hotels & FBO', receptivo: 'Executive Meet & Greet',
+      assistants: 'Assistants & Secretaries', familyoffice: 'Family Office & Private Clients',
       routeLabel: 'Reference route', routeCustom: 'Enter a different journey', routeHelp: 'A reference route uses the indicated pick-up and destination. For a different journey, choose “Enter a different journey”.',
       origin: 'Pick-up', originLabel: 'Pick-up point *', originPlaceholder: 'Airport, hotel or departure address',
       destination: 'Destination', destinationLabel: 'Destination *', destinationPlaceholder: 'Hotel, appointment or arrival address',

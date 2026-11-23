@@ -10,7 +10,7 @@
     menuBreakpoint: 960,
     emitEvents: true
   }, window.HBC_CONFIG || {});
-  const serviceIds = ['aeroporto', 'corporativo', 'disposicao', 'eventos', 'hoteis', 'receptivo'];
+  const serviceIds = ['aeroporto', 'corporativo', 'disposicao', 'eventos', 'hoteis', 'receptivo', 'assistants', 'familyoffice'];
   const dictionary = {
     pt: {
       'nav.home': 'Início', 'nav.services': 'Serviços', 'nav.fleet': 'Nossa frota',
@@ -25,7 +25,9 @@
       'service.disposicao.title': 'Disposição executiva',
       'service.eventos.title': 'Eventos',
       'service.hoteis.title': 'Hotéis & FBO',
-      'service.receptivo.title': 'Receptivo',
+      'service.receptivo.title': 'Receptivo Executivo',
+      'service.assistants.title': 'Assistants & Secretaries',
+      'service.familyoffice.title': 'Family Office & Private Clients',
       'quote.fallback': 'Continuar no WhatsApp',
       'quote.ready': 'Seu resumo está pronto. Envie a mensagem no WhatsApp para solicitar disponibilidade e orçamento. Se a nova aba não abriu, use o link abaixo.',
       'quote.invalid': 'Confira os campos indicados antes de continuar.',
@@ -59,7 +61,9 @@
       'service.disposicao.title': 'Chauffeur at disposal',
       'service.eventos.title': 'Events',
       'service.hoteis.title': 'Hotels & FBO',
-      'service.receptivo.title': 'Meet & greet',
+      'service.receptivo.title': 'Executive Meet & Greet',
+      'service.assistants.title': 'Assistants & Secretaries',
+      'service.familyoffice.title': 'Family Office & Private Clients',
       'quote.fallback': 'Continue on WhatsApp',
       'quote.ready': 'Your summary is ready. Send the message on WhatsApp to request availability and a quote. If the new tab did not open, use the link below.',
       'quote.invalid': 'Please check the indicated fields before continuing.',

@@ -35,6 +35,9 @@ html.service-dialog-open { overflow: hidden; }
 .service-dialog-visual { width: 100%; height: 220px; background: var(--hbc-surface-alt, #0d161d); }
 .service-dialog-visual img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
 #service-dialog-corporativo .service-dialog-visual img { object-position: center 15%; }
+#service-dialog-receptivo .service-dialog-visual img { object-position: center 45%; }
+#service-dialog-assistants .service-dialog-visual img { object-position: center 30%; }
+#service-dialog-familyoffice .service-dialog-visual img { object-position: center 55%; }
 .service-dialog-content { padding: 28px 32px 30px; }
 .service-dialog-kicker {
   margin: 0 0 7px; color: var(--hbc-gold, #f2c56f); font-size: 10px; font-weight: 600;
@@ -54,6 +57,11 @@ html.service-dialog-open { overflow: hidden; }
 .service-dialog-back {
   min-height: 44px; padding: 9px 10px; border: 0; background: transparent;
   color: var(--hbc-muted, #b8c2c8); font-size: 12px; text-decoration: underline; text-underline-offset: 4px;
+}
+@media (min-width: 981px) {
+  .service-grid--expanded { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .service-grid--expanded > .service { grid-column: span 2; }
+  .service-grid--expanded > .service:nth-child(7) { grid-column: 2 / span 2; }
 }
 @media (max-width: 600px) {
   .service-dialog { width: calc(100vw - 24px); max-height: calc(100dvh - 24px); border-radius: 10px; }

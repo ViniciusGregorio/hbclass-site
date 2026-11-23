@@ -14,10 +14,12 @@ from urllib.parse import quote, unquote
 GALLERIES = {
     "aeroporto": ("Transfer aeroporto", "Airport transfers", "assets/novas/transferofc001.webp"),
     "corporativo": ("Transporte corporativo", "Corporate transportation", "assets/novas/corporativoofc001.webp"),
-    "disposicao": ("Disposição executiva", "Chauffeur at disposal", "assets/novas/disposicao.webp"),
+    "disposicao": ("Disposição executiva", "Chauffeur at disposal", "assets/novas/disposicao01.webp"),
     "eventos": ("Eventos", "Events", "assets/novas/eventos.webp"),
     "hoteis": ("Hotéis & FBO", "Hotels & FBO", "assets/novas/hoteis-fbo.webp"),
-    "receptivo": ("Receptivo", "Meet & greet", "assets/novas/receptivo.webp"),
+    "receptivo": ("Receptivo Executivo", "Executive Meet & Greet", "assets/novas/receptivoexecutivoofc001.webp"),
+    "assistants": ("Assistants & Secretaries", "Assistants & Secretaries", "assets/novas/assitantssecretariesofc001.webp"),
+    "familyoffice": ("Family Office & Private Clients", "Family Office & Private Clients", "assets/novas/FAMILYOFFICE_PRIVATECLIENTS.webp"),
     "andre": ("André Gregório", "André Gregório", "assets/galerias/andre/retrato-escritorio.webp"),
 }
 EXTENSIONS = {".png", ".webp", ".avif"}

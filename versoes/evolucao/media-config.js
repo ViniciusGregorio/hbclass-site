@@ -21,33 +21,6 @@ window.HBC_MEDIA = {
             "pt": "Motorista recebe passageiro junto a um sedã em terminal de aviação executiva",
             "en": "Chauffeur welcoming a passenger beside a sedan at an executive aviation terminal"
           }
-        },
-        {
-          "src": "assets/galerias/aeroporto/terminal-diurno.webp",
-          "alt": {
-            "pt": "Estrutura de terminal aeroportuário durante o dia",
-            "en": "Airport terminal structure during the day"
-          },
-          "fit": "cover",
-          "position": "center"
-        },
-        {
-          "src": "assets/galerias/aeroporto/terminal-noturno.webp",
-          "alt": {
-            "pt": "Terminal aeroportuário iluminado à noite",
-            "en": "Airport terminal illuminated at night"
-          },
-          "fit": "contain",
-          "position": "center"
-        },
-        {
-          "src": "assets/galerias/aeroporto/vista-aerea.webp",
-          "alt": {
-            "pt": "Vista aérea de complexo aeroportuário",
-            "en": "Aerial view of an airport complex"
-          },
-          "fit": "cover",
-          "position": "center"
         }
       ]
     },
@@ -73,10 +46,10 @@ window.HBC_MEDIA = {
       },
       "slides": [
         {
-          "src": "assets/novas/disposicao.webp",
+          "src": "assets/novas/disposicao01.webp",
           "alt": {
-            "pt": "Passageira no banco traseiro durante um trajeto",
-            "en": "A passenger in the back seat during a journey"
+            "pt": "Passageira usa o celular no banco traseiro de um veículo executivo",
+            "en": "Passenger using a phone in the rear seat of an executive vehicle"
           }
         }
       ]
@@ -108,74 +81,50 @@ window.HBC_MEDIA = {
             "pt": "Viajante sendo recebido à saída de um hotel",
             "en": "A traveller being welcomed outside a hotel"
           }
-        },
-        {
-          "src": "assets/galerias/hoteis/arquitetura-urbana.webp",
-          "alt": {
-            "pt": "Fachada de hotel com arquitetura curva em área urbana",
-            "en": "Hotel with a curved façade in an urban area"
-          },
-          "fit": "cover",
-          "position": "center"
-        },
-        {
-          "src": "assets/galerias/hoteis/aviacao-executiva.webp",
-          "alt": {
-            "pt": "Entrada de terminal de aviação executiva",
-            "en": "Entrance to an executive aviation terminal"
-          },
-          "fit": "contain",
-          "position": "center"
-        },
-        {
-          "src": "assets/galerias/hoteis/entrada-urbana.webp",
-          "alt": {
-            "pt": "Entrada de hotel em avenida de São Paulo",
-            "en": "Hotel entrance on an avenue in São Paulo"
-          },
-          "fit": "cover",
-          "position": "center"
-        },
-        {
-          "src": "assets/galerias/hoteis/hotel-arborizado.webp",
-          "alt": {
-            "pt": "Hotel cercado por área arborizada",
-            "en": "Hotel surrounded by trees"
-          },
-          "fit": "cover",
-          "position": "center"
-        },
-        {
-          "src": "assets/galerias/hoteis/hotel-piscina.webp",
-          "alt": {
-            "pt": "Fachada de hotel e área externa com piscina",
-            "en": "Hotel façade and outdoor pool area"
-          },
-          "fit": "cover",
-          "position": "center"
-        },
-        {
-          "src": "assets/galerias/hoteis/torre-hotel.webp",
-          "alt": {
-            "pt": "Torre de hotel em São Paulo",
-            "en": "Hotel tower in São Paulo"
-          },
-          "fit": "contain",
-          "position": "center"
         }
       ]
     },
     "receptivo": {
       "label": {
-        "pt": "Receptivo",
-        "en": "Meet & greet"
+        "pt": "Receptivo Executivo",
+        "en": "Executive Meet & Greet"
       },
       "slides": [
         {
-          "src": "assets/novas/receptivo.webp",
+          "src": "assets/novas/receptivoexecutivoofc001.webp",
           "alt": {
-            "pt": "Casal de turistas sendo acolhido com suas malas",
-            "en": "A travelling couple being welcomed with their luggage"
+            "pt": "Motorista segura a porta de um sedã executivo para um passageiro diante de um edifício",
+            "en": "Chauffeur holding the door of an executive sedan for a passenger outside a building"
+          }
+        }
+      ]
+    },
+    "assistants": {
+      "label": {
+        "pt": "Assistants & Secretaries",
+        "en": "Assistants & Secretaries"
+      },
+      "slides": [
+        {
+          "src": "assets/novas/assitantssecretariesofc001.webp",
+          "alt": {
+            "pt": "Mulher de blazer claro usando notebook em uma mesa de escritório",
+            "en": "Woman in a light blazer using a laptop at an office desk"
+          }
+        }
+      ]
+    },
+    "familyoffice": {
+      "label": {
+        "pt": "Family Office & Private Clients",
+        "en": "Family Office & Private Clients"
+      },
+      "slides": [
+        {
+          "src": "assets/novas/FAMILYOFFICE_PRIVATECLIENTS.webp",
+          "alt": {
+            "pt": "Família com duas crianças junto a um sedã preto na entrada de uma residência",
+            "en": "Family with two children beside a black sedan outside a residence"
           }
         }
       ]
