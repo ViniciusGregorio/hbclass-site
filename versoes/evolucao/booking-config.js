@@ -67,6 +67,12 @@ window.HBC_BOOKING_CONFIG = {
         volvo: {fixed: null, perKm: null, minimum: null},
         corolla: {fixed: null, perKm: null, minimum: null}
       },
+      aviacao: {
+        mercedes: {fixed: null, perKm: null, minimum: null},
+        commander: {fixed: null, perKm: null, minimum: null},
+        volvo: {fixed: null, perKm: null, minimum: null},
+        corolla: {fixed: null, perKm: null, minimum: null}
+      },
       hoteis: {
         mercedes: {fixed: null, perKm: null, minimum: null},
         commander: {fixed: null, perKm: null, minimum: null},

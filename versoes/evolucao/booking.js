@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   const config = window.HBC_BOOKING_CONFIG || {};
-  const serviceIds = ['aeroporto', 'corporativo', 'disposicao', 'eventos', 'hoteis', 'receptivo', 'assistants', 'familyoffice'];
+  const serviceIds = ['aeroporto', 'corporativo', 'disposicao', 'eventos', 'aviacao', 'receptivo', 'assistants', 'familyoffice', 'hoteis'];
   const draftFields = ['name', 'service', 'origin', 'destination', 'date', 'time', 'vehicle'];
   const text = {
     pt: {
@@ -11,7 +11,7 @@
       name: 'Nome', nameLabel: 'Nome *', namePlaceholder: 'Nome para o atendimento',
       required: '* Campos obrigatórios', service: 'Serviço', serviceLabel: 'Serviço *', serviceSelect: 'Selecione o serviço',
       aeroporto: 'Transfer aeroporto', corporativo: 'Transporte corporativo', disposicao: 'Disposição executiva',
-      eventos: 'Eventos', hoteis: 'Hotéis & FBO', receptivo: 'Receptivo Executivo',
+      eventos: 'Eventos', aviacao: 'Aviação Executiva & FBO', hoteis: 'Hotéis', receptivo: 'Receptivo Executivo',
       assistants: 'Assistants & Secretaries', familyoffice: 'Family Office & Private Clients',
       origin: 'Origem', originLabel: 'Origem *', originPlaceholder: 'Aeroporto, hotel ou endereço de saída',
       destination: 'Destino', destinationLabel: 'Destino *', destinationPlaceholder: 'Hotel, compromisso ou endereço de chegada',
@@ -42,7 +42,7 @@
       name: 'Name', nameLabel: 'Name *', namePlaceholder: 'Name for this enquiry',
       required: '* Required fields', service: 'Service', serviceLabel: 'Service *', serviceSelect: 'Select a service',
       aeroporto: 'Airport transfers', corporativo: 'Corporate transportation', disposicao: 'Chauffeur at disposal',
-      eventos: 'Events', hoteis: 'Hotels & FBO', receptivo: 'Executive Meet & Greet',
+      eventos: 'Events', aviacao: 'EXECUTIVE AVIATION & FBO', hoteis: 'Hotels', receptivo: 'Executive Meet & Greet',
       assistants: 'Assistants & Secretaries', familyoffice: 'Family Office & Private Clients',
       origin: 'Pick-up', originLabel: 'Pick-up point *', originPlaceholder: 'Airport, hotel or departure address',
       destination: 'Destination', destinationLabel: 'Destination *', destinationPlaceholder: 'Hotel, appointment or arrival address',

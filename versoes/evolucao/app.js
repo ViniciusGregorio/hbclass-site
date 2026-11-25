@@ -10,7 +10,7 @@
     menuBreakpoint: 1180,
     emitEvents: true
   }, window.HBC_CONFIG || {});
-  const serviceIds = ['aeroporto', 'corporativo', 'disposicao', 'eventos', 'hoteis', 'receptivo', 'assistants', 'familyoffice'];
+  const serviceIds = ['aeroporto', 'corporativo', 'disposicao', 'eventos', 'aviacao', 'receptivo', 'assistants', 'familyoffice', 'hoteis'];
   const dictionary = {
     pt: {
       'nav.home': 'Início', 'nav.services': 'Serviços', 'nav.fleet': 'Nossa frota',
@@ -24,7 +24,8 @@
       'service.corporativo.title': 'Transporte corporativo',
       'service.disposicao.title': 'Disposição executiva',
       'service.eventos.title': 'Eventos',
-      'service.hoteis.title': 'Hotéis & FBO',
+      'service.aviacao.title': 'Aviação Executiva & FBO',
+      'service.hoteis.title': 'Hotéis',
       'service.receptivo.title': 'Receptivo Executivo',
       'service.assistants.title': 'Assistants & Secretaries',
       'service.familyoffice.title': 'Family Office & Private Clients',
@@ -60,7 +61,8 @@
       'service.corporativo.title': 'Corporate transportation',
       'service.disposicao.title': 'Chauffeur at disposal',
       'service.eventos.title': 'Events',
-      'service.hoteis.title': 'Hotels & FBO',
+      'service.aviacao.title': 'EXECUTIVE AVIATION & FBO',
+      'service.hoteis.title': 'Hotels',
       'service.receptivo.title': 'Executive Meet & Greet',
       'service.assistants.title': 'Assistants & Secretaries',
       'service.familyoffice.title': 'Family Office & Private Clients',

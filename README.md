@@ -2,6 +2,10 @@
 
 Homepage de transporte executivo, com apresentação dos serviços, frota, galerias e pré-agendamento pelo WhatsApp. O código do site está em `versoes/evolucao/`.
 
+Aviação Executiva & FBO (`aviacao`, serviço 05) e Hotéis (`hoteis`, serviço 09) possuem cartões, explicações e opções de pré-agendamento independentes. As imagens de Eventos, Aviação Executiva & FBO e Hotéis mostram cenas ilustrativas de atendimento. Os retratos de André usam os novos cenários nas versões `-v2`, preservando a pessoa das fotos de referência.
+
+Commander e Corolla possuem duas imagens ilustrativas adicionais cada, identificadas na legenda ao ampliar. As fotos principais reais dos veículos continuam disponíveis. Os originais e prompts de produção são preservados fora da pasta pública, em `output/producao-imagens-2026-11-25/` no workspace de trabalho.
+
 ## Visualizar localmente
 
 É necessário Python 3.10 ou mais recente para os comandos de manutenção.

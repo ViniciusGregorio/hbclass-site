@@ -16,7 +16,7 @@
   const dialog = document.getElementById('privacy-dialog');
   const checkbox = document.getElementById('privacy-analytics');
   const actions = new Set(['language_change', 'whatsapp_click', 'instagram_click', 'quote_open', 'gallery_open', 'booking_review', 'booking_whatsapp']);
-  const services = new Set(['aeroporto', 'corporativo', 'disposicao', 'eventos', 'hoteis', 'receptivo', 'assistants', 'familyoffice']);
+  const services = new Set(['aeroporto', 'corporativo', 'disposicao', 'eventos', 'aviacao', 'receptivo', 'assistants', 'familyoffice', 'hoteis']);
   const positions = new Set(['language_switch', 'header', 'hero', 'services_intro', 'service', 'service_details', 'fleet', 'contact', 'footer', 'floating', 'quote_form', 'quote_fallback', 'journey_planner', 'unknown']);
   let choice = null;
   let active = false;

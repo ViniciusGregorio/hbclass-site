@@ -61,25 +61,40 @@ window.HBC_MEDIA = {
       },
       "slides": [
         {
-          "src": "assets/novas/eventos.webp",
+          "src": "assets/novas/eventos-experiencia-v2.webp",
           "alt": {
-            "pt": "Convidados sendo recebidos para um evento",
-            "en": "Guests being welcomed for an event"
+            "pt": "Motorista recebe um casal junto ao carro na chegada a um evento",
+            "en": "Chauffeur welcoming a couple beside the car on arrival at an event"
+          }
+        }
+      ]
+    },
+    "aviacao": {
+      "label": {
+        "pt": "Aviação Executiva & FBO",
+        "en": "EXECUTIVE AVIATION & FBO"
+      },
+      "slides": [
+        {
+          "src": "assets/novas/aviacao-executiva-fbo-v2.webp",
+          "alt": {
+            "pt": "Motorista recebe passageira junto a um sedã em FBO, com jato e helicóptero ao fundo",
+            "en": "Chauffeur welcoming a passenger beside a sedan at an FBO, with a jet and helicopter in the background"
           }
         }
       ]
     },
     "hoteis": {
       "label": {
-        "pt": "Hotéis & FBO",
-        "en": "Hotels & FBO"
+        "pt": "Hotéis",
+        "en": "Hotels"
       },
       "slides": [
         {
-          "src": "assets/novas/hoteis-fbo.webp",
+          "src": "assets/novas/hoteis-experiencia-v2.webp",
           "alt": {
-            "pt": "Viajante sendo recebido à saída de um hotel",
-            "en": "A traveller being welcomed outside a hotel"
+            "pt": "Motorista auxilia um casal na chegada de carro a um hotel",
+            "en": "Chauffeur assisting a couple arriving by car at a hotel"
           }
         }
       ]
@@ -136,19 +151,19 @@ window.HBC_MEDIA = {
       },
       "slides": [
         {
-          "src": "assets/galerias/andre/retrato-escritorio.webp",
+          "src": "assets/galerias/andre/retrato-escritorio-v2.webp",
           "alt": {
-            "pt": "André Gregório de camisa e gravata em escritório",
-            "en": "André Gregório wearing a shirt and tie in an office"
+            "pt": "André Gregório de camisa e gravata em escritório com luz natural",
+            "en": "André Gregório wearing a shirt and tie in a naturally lit office"
           },
           "fit": "cover",
           "position": "center 20%"
         },
         {
-          "src": "assets/galerias/andre/retrato-terno.webp",
+          "src": "assets/galerias/andre/retrato-terno-v2.webp",
           "alt": {
-            "pt": "André Gregório de terno em ambiente interno",
-            "en": "André Gregório wearing a suit indoors"
+            "pt": "André Gregório de terno em uma recepção corporativa",
+            "en": "André Gregório wearing a suit in a corporate reception"
           },
           "fit": "cover",
           "position": "center 15%"

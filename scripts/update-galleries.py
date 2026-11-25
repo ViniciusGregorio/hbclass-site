@@ -15,14 +15,17 @@ GALLERIES = {
     "aeroporto": ("Transfer aeroporto", "Airport transfers", "assets/novas/transferofc001.webp"),
     "corporativo": ("Transporte corporativo", "Corporate transportation", "assets/novas/corporativoofc001.webp"),
     "disposicao": ("Disposição executiva", "Chauffeur at disposal", "assets/novas/disposicao01.webp"),
-    "eventos": ("Eventos", "Events", "assets/novas/eventos.webp"),
-    "hoteis": ("Hotéis & FBO", "Hotels & FBO", "assets/novas/hoteis-fbo.webp"),
+    "eventos": ("Eventos", "Events", "assets/novas/eventos-experiencia-v2.webp"),
+    "aviacao": ("Aviação Executiva & FBO", "EXECUTIVE AVIATION & FBO", "assets/novas/aviacao-executiva-fbo-v2.webp"),
+    "hoteis": ("Hotéis", "Hotels", "assets/novas/hoteis-experiencia-v2.webp"),
     "receptivo": ("Receptivo Executivo", "Executive Meet & Greet", "assets/novas/receptivoexecutivoofc001.webp"),
     "assistants": ("Assistants & Secretaries", "Assistants & Secretaries", "assets/novas/assitantssecretariesofc001.webp"),
     "familyoffice": ("Family Office & Private Clients", "Family Office & Private Clients", "assets/novas/FAMILYOFFICE_PRIVATECLIENTS.webp"),
-    "andre": ("André Gregório", "André Gregório", "assets/galerias/andre/retrato-escritorio.webp"),
+    "andre": ("André Gregório", "André Gregório", "assets/galerias/andre/retrato-escritorio-v2.webp"),
 }
 EXTENSIONS = {".png", ".webp", ".avif"}
+# Keep previous public URLs available without returning retired portraits to the carousel.
+RETIRED_GALLERY_FILES = {"andre": {"retrato-escritorio.webp", "retrato-terno.webp"}}
 HEADER = """/* High Business Class — local photo galleries.
  * Rebuild: python3 scripts/update-galleries.py (from the project root).
  * Edit alt.pt / alt.en for accurate descriptions. Existing descriptions survive rebuilding.
@@ -88,10 +91,13 @@ def update(site: Path) -> dict:
             raise ValueError(f"Imagem inicial não encontrada: {site / fallback}. Nenhum manifesto foi alterado.")
         folder = site / "assets" / "galerias" / key
         folder.mkdir(parents=True, exist_ok=True)
-        files = sorted((path for path in folder.iterdir() if path.is_file() and not path.is_symlink() and path.suffix.casefold() in EXTENSIONS), key=sort_key)
+        files = sorted((path for path in folder.iterdir() if path.is_file() and not path.is_symlink() and path.suffix.casefold() in EXTENSIONS and path.name not in RETIRED_GALLERY_FILES.get(key, set())), key=sort_key)
         old_entry = old_galleries.get(key, {})
         if not isinstance(old_entry, dict):
             old_entry = {}
+        # The former combined Hotels & FBO service is now two separate services.
+        if key == "hoteis" and old_entry.get("label") == {"pt": "Hotéis & FBO", "en": "Hotels & FBO"}:
+            old_entry = {**old_entry, "label": {"pt": label_pt, "en": label_en}}
         old_slides = {
             slide["src"]: slide
             for slide in old_entry.get("slides", [])
