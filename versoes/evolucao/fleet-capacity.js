@@ -1,4 +1,4 @@
-/* Referências volumétricas de bagagem. Não é um teste de encaixe nem uma regra de reserva. */
+/* Bagagem: referências por volume e quantidades informadas para os SUVs no modo mais bagagem. */
 (function () {
   'use strict';
 
@@ -10,11 +10,11 @@
     medium: { dimensions: [68, 45, 28], pt: ['mala média', 'malas médias'], en: ['medium suitcase', 'medium suitcases'] },
     large: { dimensions: [75, 51, 32], pt: ['mala grande', 'malas grandes'], en: ['large suitcase', 'large suitcases'] }
   };
-  // Referências de fabricantes; conferir ano/versão do veículo efetivamente disponibilizado.
+  // Lugares/volumes de referência; quantidades em bags informadas pelo responsável.
   const vehicles = {
     mercedes: { full: { passengers: 4, litres: 540 } },
-    commander: { full: { passengers: 6, litres: 233 }, cargo: { passengers: 4, litres: 661 } },
-    volvo: { full: { passengers: 6, litres: 244 }, cargo: { passengers: 4, litres: 650 } },
+    commander: { full: { passengers: 6, litres: 233 }, cargo: { passengers: 4, bags: { small: [8, 10], medium: 6, large: 4 } } },
+    volvo: { full: { passengers: 6, litres: 244 }, cargo: { passengers: 4, bags: { small: [8, 10], medium: 6, large: 4 } } },
     corolla: { full: { passengers: 4, litres: 470 } }
   };
   const usableFraction = 0.60; // Hipótese do site: reservar 40% para espaços não aproveitados; não é dado do fabricante.
@@ -41,11 +41,14 @@
       const select = card.querySelector('[data-fleet-layout]');
       const mode = select && Object.prototype.hasOwnProperty.call(layouts, select.value) ? select.value : 'full';
       const layout = layouts[mode];
-      const count = estimate(layout.litres, selectedSize);
+      const count = layout.bags ? layout.bags[selectedSize] : estimate(layout.litres, selectedSize);
+      const range = Array.isArray(count);
+      const displayedCount = range ? count.join('–') : count;
+      const spokenCount = range ? count.join(en ? ' to ' : ' a ') : count;
       card.querySelector('[data-fleet-passengers]').textContent = (en ? 'Up to ' : 'Até ') + layout.passengers;
       const bags = card.querySelector('[data-fleet-bags]');
-      bags.textContent = '≈ ' + count;
-      bags.setAttribute('aria-label', (en ? 'Approximately ' : 'Aproximadamente ') + count);
+      bags.textContent = '≈ ' + displayedCount;
+      bags.setAttribute('aria-label', (en ? 'Approximately ' : 'Aproximadamente ') + spokenCount);
       card.querySelector('[data-fleet-bag-label]').textContent = size[en ? 'en' : 'pt'][count === 1 ? 0 : 1];
       const note = card.querySelector('[data-fleet-layout-note]');
       if (note) {

@@ -30,18 +30,18 @@ As fontes locais em `assets/fonts/` acompanham suas licenças OFL. Preserve esse
 
 Os cartões usam configurações de referência pesquisadas em 23/11/2026. Passageiros são lugares além do motorista. Ano, versão e configuração do veículo efetivamente disponibilizado devem ser confirmados no atendimento; o Commander também possui versões de cinco lugares. Os seletores dos SUVs representam as versões de sete lugares, com terceira fileira em uso ou rebatida, atualizando passageiros e bagagem juntos.
 
-A quantidade de malas é uma **estimativa volumétrica do site solicitada pelo responsável**, e não uma contagem certificada pelo fabricante ou um teste físico de encaixe. O seletor compara malas de um tamanho por vez, sem somar pequenas, médias e grandes. Valores iniciais: malas médias e terceira fileira em uso nos SUVs.
+A quantidade de malas usa **referências informadas pelo responsável para os SUVs no modo “Mais bagagem”**: 4 grandes, 6 médias ou aproximadamente 8 a 10 pequenas. As demais configurações mantêm estimativas volumétricas próprias. Essas quantidades não são uma certificação do fabricante nem um teste físico de encaixe. O seletor compara malas de um tamanho por vez, sem somar pequenas, médias e grandes. Valores iniciais: malas médias e terceira fileira rebatida nos SUVs, com até 4 passageiros além do motorista.
 
 | Referência | Passageiros | Porta-malas | Pequenas ≈ | Médias ≈ | Grandes ≈ |
 |---|---:|---:|---:|---:|---:|
 | Mercedes-Benz E 300 sedã | 4 | 540 L | 6 | 3 | 2 |
 | Toyota Corolla sedã, ficha 2026 | 4 | 470 L | 5 | 3 | 2 |
 | Commander, sete lugares, terceira fileira em uso | 6 | 233 L | 2 | 1 | 1 |
-| Commander, terceira fileira rebatida | 4 | 661 L | 7 | 4 | 3 |
+| Commander, terceira fileira rebatida | 4 | 661 L | 8–10 | 6 | 4 |
 | Volvo XC90 T8 2026, terceira fileira em uso | 6 | 244 L | 2 | 1 | 1 |
-| Volvo XC90 T8 2026, terceira fileira rebatida | 4 | 650 L | 7 | 4 | 3 |
+| Volvo XC90 T8 2026, terceira fileira rebatida | 4 | 650 L | 8–10 | 6 | 4 |
 
-O cálculo usa as dimensões de referência sem expansão: pequena 55 × 40 × 23 cm (50,6 L externos teóricos), média 68 × 45 × 28 cm (85,68 L) e grande 75 × 51 × 32 cm (122,4 L). A fórmula é `floor(porta-malas em litros × 0,60 / volume externo da mala em litros)`. A fração de 60% é uma hipótese própria para reservar espaço não aproveitado; não é fator validado pelo fabricante. Abertura, formato do compartimento e das malas, equipamentos e peso podem alterar o resultado. O volume externo calculado não corresponde à capacidade interna de roupas anunciada pelo fabricante da mala.
+Nas configurações sem quantidades informadas, o cálculo usa as dimensões de referência sem expansão: pequena 55 × 40 × 23 cm (50,6 L externos teóricos), média 68 × 45 × 28 cm (85,68 L) e grande 75 × 51 × 32 cm (122,4 L). A fórmula é `floor(porta-malas em litros × 0,60 / volume externo da mala em litros)`. A fração de 60% é uma hipótese própria para reservar espaço não aproveitado; não é fator validado pelo fabricante. Abertura, formato do compartimento e das malas, equipamentos e peso podem alterar o resultado. O volume externo calculado não corresponde à capacidade interna de roupas anunciada pelo fabricante da mala.
 
 Dados e lógica ficam em `fleet-capacity.js`; os valores iniciais sem JavaScript estão no HTML e devem acompanhar qualquer alteração dos dados. Aparência e controles ficam em `fleet-capacity.css`. Esses seletores não adicionam campos ao planejamento, não alteram o veículo selecionado no formulário e não enviam o conteúdo das escolhas a serviços externos.
 

@@ -9,7 +9,18 @@
 
   function restore() {
     document.documentElement.classList.remove('service-dialog-open');
-    if (returnFocus && opener && opener.isConnected) opener.focus({ preventScroll: true });
+    if (returnFocus && opener && opener.isConnected) {
+      let target = opener;
+      // Navigation shortcuts close their menu before opening the dialog. Return
+      // to its visible control instead of focusing a now-hidden submenu link.
+      if (opener.closest('#site-nav')) {
+        const menuToggle = document.getElementById('menu-toggle');
+        const section = opener.closest('details');
+        const summary = section && section.querySelector('summary');
+        target = menuToggle && menuToggle.getClientRects().length ? menuToggle : (summary || opener);
+      }
+      target.focus({ preventScroll: true });
+    }
     active = null;
     opener = null;
     returnFocus = true;
@@ -29,7 +40,11 @@
     const dialog = document.getElementById('service-dialog-' + button.dataset.serviceOpen);
     if (!dialog) return;
     button.hidden = false;
-    button.addEventListener('click', function () {
+    button.addEventListener('click', function (event) {
+      if (button.matches('a[href]') && (event.button > 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey)) return;
+      // Keep each anchor's card destination as its no-JS fallback, but do not
+      // navigate or scroll there while opening the explanation.
+      event.preventDefault();
       if (active) return;
       opener = button;
       active = dialog;
