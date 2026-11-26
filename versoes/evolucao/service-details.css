@@ -34,7 +34,7 @@ html.service-dialog-open { overflow: hidden; }
 .service-dialog-close .icon { width: 20px; height: 20px; }
 .service-dialog-visual { width: 100%; height: 220px; background: var(--hbc-surface-alt, #0d161d); }
 .service-dialog-visual img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
-#service-dialog-aviacao .service-dialog-visual img,
+#service-dialog-aviacao .service-dialog-visual img { object-position: center 20%; }
 #service-dialog-hoteis .service-dialog-visual img,
 #service-dialog-eventos .service-dialog-visual img { object-position: center top; }
 #service-dialog-corporativo .service-dialog-visual img { object-position: center 15%; }

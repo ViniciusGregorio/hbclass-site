@@ -61,7 +61,7 @@
       'service.corporativo.title': 'Corporate transportation',
       'service.disposicao.title': 'Chauffeur at disposal',
       'service.eventos.title': 'Events',
-      'service.aviacao.title': 'EXECUTIVE AVIATION & FBO',
+      'service.aviacao.title': 'Executive aviation & FBO',
       'service.hoteis.title': 'Hotels',
       'service.receptivo.title': 'Executive Meet & Greet',
       'service.assistants.title': 'Assistants & Secretaries',

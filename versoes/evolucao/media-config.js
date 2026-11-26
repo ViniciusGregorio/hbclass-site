@@ -72,14 +72,14 @@ window.HBC_MEDIA = {
     "aviacao": {
       "label": {
         "pt": "Aviação Executiva & FBO",
-        "en": "EXECUTIVE AVIATION & FBO"
+        "en": "Executive aviation & FBO"
       },
       "slides": [
         {
-          "src": "assets/novas/aviacao-executiva-fbo-v2.webp",
+          "src": "assets/novas/aviacao-executiva-fbo-helicoptero-v4.webp",
           "alt": {
-            "pt": "Motorista recebe passageira junto a um sedã em FBO, com jato e helicóptero ao fundo",
-            "en": "Chauffeur welcoming a passenger beside a sedan at an FBO, with a jet and helicopter in the background"
+            "pt": "Motorista junto a um sedã executivo acompanha uma família no embarque em helicóptero no FBO ao pôr do sol",
+            "en": "Chauffeur beside an executive sedan as a family approaches a helicopter at an FBO at sunset"
           }
         }
       ]
@@ -136,10 +136,10 @@ window.HBC_MEDIA = {
       },
       "slides": [
         {
-          "src": "assets/novas/FAMILYOFFICE_PRIVATECLIENTS.webp",
+          "src": "assets/novas/family-office-private-clients-v2.webp",
           "alt": {
-            "pt": "Família com duas crianças junto a um sedã preto na entrada de uma residência",
-            "en": "Family with two children beside a black sedan outside a residence"
+            "pt": "Família com duas crianças e motorista junto a um sedã executivo na entrada de uma residência",
+            "en": "Family with two children and a chauffeur beside an executive sedan outside a residence"
           }
         }
       ]

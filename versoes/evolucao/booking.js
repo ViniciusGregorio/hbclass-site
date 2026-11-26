@@ -42,7 +42,7 @@
       name: 'Name', nameLabel: 'Name *', namePlaceholder: 'Name for this enquiry',
       required: '* Required fields', service: 'Service', serviceLabel: 'Service *', serviceSelect: 'Select a service',
       aeroporto: 'Airport transfers', corporativo: 'Corporate transportation', disposicao: 'Chauffeur at disposal',
-      eventos: 'Events', aviacao: 'EXECUTIVE AVIATION & FBO', hoteis: 'Hotels', receptivo: 'Executive Meet & Greet',
+      eventos: 'Events', aviacao: 'Executive aviation & FBO', hoteis: 'Hotels', receptivo: 'Executive Meet & Greet',
       assistants: 'Assistants & Secretaries', familyoffice: 'Family Office & Private Clients',
       origin: 'Pick-up', originLabel: 'Pick-up point *', originPlaceholder: 'Airport, hotel or departure address',
       destination: 'Destination', destinationLabel: 'Destination *', destinationPlaceholder: 'Hotel, appointment or arrival address',

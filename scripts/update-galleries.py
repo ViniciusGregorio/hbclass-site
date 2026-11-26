@@ -16,11 +16,11 @@ GALLERIES = {
     "corporativo": ("Transporte corporativo", "Corporate transportation", "assets/novas/corporativoofc001.webp"),
     "disposicao": ("Disposição executiva", "Chauffeur at disposal", "assets/novas/disposicao01.webp"),
     "eventos": ("Eventos", "Events", "assets/novas/eventos-experiencia-v2.webp"),
-    "aviacao": ("Aviação Executiva & FBO", "EXECUTIVE AVIATION & FBO", "assets/novas/aviacao-executiva-fbo-v2.webp"),
+    "aviacao": ("Aviação Executiva & FBO", "Executive aviation & FBO", "assets/novas/aviacao-executiva-fbo-helicoptero-v4.webp"),
     "hoteis": ("Hotéis", "Hotels", "assets/novas/hoteis-experiencia-v2.webp"),
     "receptivo": ("Receptivo Executivo", "Executive Meet & Greet", "assets/novas/receptivoexecutivoofc001.webp"),
     "assistants": ("Assistants & Secretaries", "Assistants & Secretaries", "assets/novas/assitantssecretariesofc001.webp"),
-    "familyoffice": ("Family Office & Private Clients", "Family Office & Private Clients", "assets/novas/FAMILYOFFICE_PRIVATECLIENTS.webp"),
+    "familyoffice": ("Family Office & Private Clients", "Family Office & Private Clients", "assets/novas/family-office-private-clients-v2.webp"),
     "andre": ("André Gregório", "André Gregório", "assets/galerias/andre/retrato-escritorio-v2.webp"),
 }
 EXTENSIONS = {".png", ".webp", ".avif"}
